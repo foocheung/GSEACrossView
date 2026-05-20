@@ -1,0 +1,47 @@
+project:
+  output_file: "v2_PBMC_ILEUM_COMBINED_GSEA_ALL_FINE_ANN.csv"
+
+datasets:
+  - name: "PBMC"
+    root: "deg_gsea_pooled_vs_within_pool_Monaco_fine_pruned/paired_cross_pool/gsea_by_celltype"
+    file_regex: "_results\\.csv$"
+    exclude_regex: "_sig\\.csv"
+    celltype_from: "parent_after"
+    parent_anchor: "gsea_by_celltype"
+    geneset_patterns:
+      GO_BP: "GO:BP"
+      Reactome: "REACTOME"
+      Hallmark: "HALLMARK"
+
+  - name: "ILEUM"
+    root: "/vf/users/cheungf/ACEPD/LINEAGE_DOUBLET_ANALYSIS_PANGI_V9/OUTPUT_20251128_141815_WITH_BATCH/Monaco_fine/gsea_results"
+    file_regex: "cluster_.*Treated_vs_Untreated\\.csv$"
+    celltype_from: "regex"
+    celltype_regex: "cluster_(.*?)_GSEA"
+    geneset_patterns:
+      GO: "GO:BP"
+      REACTOME: "REACTOME"
+      HALLMARK: "HALLMARK"
+
+columns:
+  common:
+    - ID
+    - Description
+    - setSize
+    - enrichmentScore
+    - NES
+    - pvalue
+    - p.adjust
+    - qvalue
+    - rank
+    - leading_edge
+    - leading_edge_symbols
+    - leading_edge_entrez
+    - cluster
+    - geneset
+    - annotation
+    - dataset
+
+settings:
+  annotation: "Monaco_fine"
+  clean_cluster_names: true

@@ -1,0 +1,24 @@
+Package: GSEACrossView
+Title: Cross-Tissue GSEA Explorer
+Version: 0.0.0.9000
+Authors@R: person('Foo', 'Cheung', email = 'foo@example.com', role = c('cre', 'aut'))
+Description: A golem-based Shiny app for exploring cross-tissue and cross-cell-type GSEA results. The app supports standardized GSEA upload, tables, shared pathway heatmaps, tissue comparison scatterplots, and recurring pathway summaries.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Imports:
+    config,
+    shiny,
+    golem,
+    dplyr,
+    tidyr,
+    ggplot2,
+    tibble,
+    DT,
+    plotly,
+    readr,
+    utils
+Suggests:
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
